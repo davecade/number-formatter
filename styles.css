@@ -20,6 +20,10 @@ textarea {
     font-size: 20px;
 }
 
+a {
+    color: inherit;
+}
+
 button {
     height: 50px;
     width: 150px;
@@ -28,6 +32,23 @@ button {
     border: none;
     font-size: larger;
     font-weight: bold;
+    outline: 0;
+    box-shadow: 5px 5px 5px rgb(201, 198, 198);
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.08);
+    transition: .3s;
+}
+
+button:active {
+    transform: scale(1);
+    transition: .1s;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .result {
@@ -64,6 +85,10 @@ button {
 .format:hover {
     background: #111;
     cursor: pointer;
+}
+
+.current_format {
+    background: #111;
 }
 
 /***hamburger icon***/

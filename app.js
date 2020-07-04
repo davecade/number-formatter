@@ -1,4 +1,14 @@
 const result = document.querySelector('.result')
+const heading = document.querySelector('.content__heading')
+
+if(document.querySelector('body').classList.contains('home')){
+
+    document.querySelector('main').innerHTML = "<h1>&#8592 Please select mode</h1>"
+
+} else if(document.querySelector('body').classList.contains('e164')) {
+    heading.innerHTML = 'Convert Numbers to E164 Format'
+    document.querySelector('ul').children[0].classList.add('current_format')
+}
 
 const change = () => {
     let changed = ''
