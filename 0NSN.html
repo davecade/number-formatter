@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class='e164'>
-    <nav class=nav>
+<body>
+    <nav class="nav">
         <ul class='menu'>
-            <li class='format'>E164</li>
-            <li class='format'>0NSN</li>
+            <li class='format'><a href="index.html">E164</a></li>
+            <li class='format current'><a href="0NSN.html">0NSN</a></li>
         </ul>
     </nav>
 
     <main class='content'>
-        <h1 class='content__heading'></h1>
+        <h1 class='content__heading'>Convert Numbers to 0NSN Format</h1>
         <div class='container'>
             <textarea cols="20" rows="20" id='numbers'></textarea>
             <br>
-            <button type="button" onclick="change()">Submit</button>
+            <button type="button" onclick="nsn()">Submit</button>
+            <br>
+            <br>
+            <span class='result' style="white-space: pre-line"></span>
         </div>
         
     </main>

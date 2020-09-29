@@ -8,20 +8,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class='home'>
-    <nav class=nav>
+<body>
+    <nav class="nav">
         <ul class='menu'>
-            <a href="e164.html"><li class='format'>E164</li></a>
-            <li class='format'>0NSN</li>
+            <li class='format current'><a href="index.html">E164</a></li>
+            <li class='format'><a href="0NSN.html">0NSN</a></li>
         </ul>
     </nav>
+
     <main class='content'>
-        <h1 class='content__heading'></h1>
+        <h1 class='content__heading'>Convert Numbers to E164 Format</h1>
         <div class='container'>
             <textarea cols="20" rows="20" id='numbers'></textarea>
             <br>
-            <button type="button" onclick="change()">Submit</button>
+            <button type="button" onclick="e164()">Submit</button>
+            <br>
+            <br>
+            <span class='result' style="white-space: pre-line"></span>
         </div>
+        
     </main>
     <script src='app.js'></script>
 </body>

@@ -1,19 +1,9 @@
 const result = document.querySelector('.result')
-const heading = document.querySelector('.content__heading')
 
-if(document.querySelector('body').classList.contains('home')){
 
-    document.querySelector('main').innerHTML = "<h1>&#8592 Please select mode</h1>"
-
-} else if(document.querySelector('body').classList.contains('e164')) {
-    heading.innerHTML = 'Convert Numbers to E164 Format'
-    document.querySelector('ul').children[0].classList.add('current_format')
-}
-
-const change = () => {
+const e164 = () => {
     let changed = ''
-    const data = document.getElementById('numbers').value.split('\n')
-
+    let data = document.getElementById('numbers').value.split('\n')
     for (number of data) {
         if (number[0]=='0' || number[0]=='+') {
             number = number.slice(1,number.length)
@@ -28,6 +18,20 @@ const change = () => {
             changed += `${number}\n`
         } else {
             changed += `61${number}\n`
+        }
+    }
+    result.innerHTML = changed
+}
+
+const nsn = () => {
+    
+    let changed = ''
+    let data = document.getElementById('numbers').value.split('\n')
+    for (number of data) {
+        console.log('number', number)
+        if(number[0]==='6' && number[1]==='1') {
+            number = `0${number.slice(2)}`
+            changed+=`${number}\n`
         }
     }
     result.innerHTML = changed
