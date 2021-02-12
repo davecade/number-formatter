@@ -1,4 +1,7 @@
 const result = document.querySelector('.result')
+const buttonEl = document.querySelector('.button')
+const numbersEl = document.querySelector('#numbers')
+
 
 
 const e164 = () => {
@@ -49,3 +52,19 @@ const removeSpaces = (number) => {
     }
     return result
 }
+
+const removeCommas = () => {
+    let numbers = numbersEl.value;
+    let newResult = '';
+    let newArray = numbers.split(",")
+
+    for (number of newArray) {
+        newResult += `${number}\n`
+    }
+
+    result.innerHTML = newResult
+}
+
+
+
+buttonEl.addEventListener('click', removeCommas)
