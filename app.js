@@ -31,7 +31,6 @@ const nsn = () => {
     let changed = ''
     let data = document.getElementById('numbers').value.split('\n')
     for (number of data) {
-        console.log('number', number)
         if(number[0]==='6' && number[1]==='1') {
             number = `0${number.slice(2)}`
             changed+=`${number}\n`
@@ -53,7 +52,7 @@ const removeSpaces = (number) => {
     return result
 }
 
-const removeCommas = () => {
+const linebyline = () => {
     let numbers = numbersEl.value;
     let newResult = '';
     let newArray = numbers.split(",")
@@ -66,5 +65,16 @@ const removeCommas = () => {
 }
 
 
+const FindPage = () => {
+    const page = document.querySelector('.format.current')
+    if(page.classList.contains('E164')) {
+        e164();
+    } else if(page.classList.contains('0NSN')) {
+        nsn();
+    } else if(page.classList.contains('linebyline')) {
+        linebyline();
+    }
+}
 
-buttonEl.addEventListener('click', removeCommas)
+
+buttonEl.addEventListener('click', FindPage)
